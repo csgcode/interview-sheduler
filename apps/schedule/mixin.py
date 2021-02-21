@@ -12,8 +12,6 @@ class DateOverlapMixin:
     """
 
     def get_overlaps(self, interviewer, candidate):
-        import bpdb;bpdb.set_trace()
-
         result_qs = AvailableTime.objects.filter(
             end_time__gte=timezone.now() + timezone.timedelta(minutes=settings.MIN_INTERVIEW_DURATION),
             user_id__in=[interviewer, candidate]
