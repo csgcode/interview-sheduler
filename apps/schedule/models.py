@@ -23,6 +23,7 @@ class AvailableTime(TimeStampedModel):
     )
     end_time = models.DateTimeField(
         validators=[val_future_end_time],
+        help_text=f"Time should atleast {settings.MIN_AVAILABLE_TIME_NOTICE} minutes from start time"
     )
 
     def __str__(self):

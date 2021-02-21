@@ -8,7 +8,8 @@ from apps.schedule.utils import date_range_chunks
 class DateOverlapMixin:
     """
     Mixin to calc to the overlappes and return a dict of overlaps
-    available_slots: this returns a list of date ranges
+    available_slots: list of date ranges with interview length duration
+    available times: list of all available times for the user and candidate
     """
 
     def get_overlaps(self, interviewer, candidate):
