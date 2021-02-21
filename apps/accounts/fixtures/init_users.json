@@ -1,0 +1,30 @@
+[
+    {
+        "model": "accounts.user",
+        "pk": 3,
+        "fields": {
+            "is_superuser": true,
+            "username": "interviewer",
+            "first_name": "interviewer",
+            "last_name": "",
+            "email": "interviewer@mailinator.com",
+            "is_staff": true,
+            "is_active": true,
+            "user_type": "interviewer"
+        }
+    },
+    {
+        "model": "accounts.user",
+        "pk": 4,
+        "fields": {
+            "is_superuser": true,
+            "username": "candidate",
+            "first_name": "candidate",
+            "last_name": "",
+            "email": "candidate@mailinator.com",
+            "is_staff": false,
+            "is_active": true,
+            "user_type": "candidate"
+        }
+    }
+]
