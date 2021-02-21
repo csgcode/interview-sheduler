@@ -11,10 +11,17 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+def get_secret(key, default_value=None):
+    """
+    modify if multiple env/secret.ini setups files used
+    """
+    return os.getenv(key, default_value)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -87,11 +94,11 @@ WSGI_APPLICATION = 'scheduler.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'entri_db',
-        'USER': 'dbuser',
-        'PASSWORD': 'password',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': get_secret('DB_NAME', 'None'),
+        'USER': get_secret('DB_USER', None),
+        'PASSWORD': get_secret('DB_PASS', None),
+        'HOST': get_secret('DB_HOST', None),
+        'PORT': get_secret('DB_PORT', 5432),
     }
 }
 # DRF settings

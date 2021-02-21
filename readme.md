@@ -58,6 +58,69 @@ Run the Project
 Website running at http://localhost:8000/
 
 ### API details
-1. API to enter available time to respective users
-``http://localhost:8000/api/v1/schedule/available-time/``
+General Info to take care while sending data.
 
+All params are required
+DateFormat sample - 2021-03-01 10:45:00+00:00 (Timezone in required)
+
+1. API to enter available time to respective users -
+``POST: http://localhost:8000/api/v1/schedule/available-time/``
+   
+   example params:
+`` 
+   {
+    "user": 1,
+    "start_time": 2021-03-01 10:00:00+00:00,
+    "end_time": 2021-03-01 18:00:00+00:00
+    }``   
+
+2. API to get the available time slots to schedule an interview
+``http://localhost:8000/api/v1/schedule/view-available-time/?interviewer=1&candidate=2``
+   query params - `interviewer=<interviewer_id>`, `candidate=<candidate_id>`
+   
+   SAMPLE OUTPUT
+
+``{
+    "data": {
+        "available_slots": [
+            [
+                "2021-03-03T13:00:00Z",
+                "2021-03-03T14:00:00Z"
+            ],
+            [
+                "2021-03-03T10:00:00Z",
+                "2021-03-03T11:00:00Z"
+            ]
+            ...
+        ],
+        "available_times": [
+            [
+                "2021-03-03T13:00:00Z",
+                "2021-03-03T14:00:00Z"
+            ],
+            [
+                "2021-03-03T10:00:00Z",
+                "2021-03-03T11:00:00Z"
+            ],
+            ...
+        ]
+    }
+}``
+
+`available_slots`: shows the suggested slots according to the interview duration(60 mins)
+                    Note: slots less than 60 mis are not shown
+`available_times`: shows the time range at which the both the users are free
+
+###Assumtions and validations
+1. All datetime entered are in UTC.
+2. all inputs are necessary and datetime should have timezone strings.
+3. Default interview duration is 1hr, this can be changed.
+
+
+### Improvements for the system TODO's or How to make it better
+1. Enable Authentication.
+2. Bring a manager user type to manage both user, Creation and listing acc. to permissions.
+3. Ability to cancel/edit an available time.
+4. AUTO-SCHEDULE - add skills to user profiles auto schedule interviewer and candidates with matching skills and setup a calender API
+5. write unit-tests to check the logic used while calculating overlaps - Break it , Fix it
+6. dockerize
