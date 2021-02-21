@@ -134,8 +134,15 @@ USE_L10N = True
 
 USE_TZ = True
 
+# PROJECT CONFIGS
+
 # Define user model
 AUTH_USER_MODEL = 'accounts.User'
+# interview configs
+MIN_INTERVIEW_DURATION = 1*60
+# TODO
+MIN_AVAILABLE_TIME_NOTICE = 1*60
+MAX_AVAILABLE_TIME_INTERVIEWER = 4*60
 
 
 # Static files (CSS, JavaScript, Images)
