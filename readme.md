@@ -1,11 +1,11 @@
-#INTERVIEW SCHEDULE MANAGER
+# INTERVIEW SCHEDULE MANAGER
 A Small application to manage the interview schedules for both the Interviewer and Candidates
 This application allows to mark Available times for both the interviewers and candidates.
 
 An HR manager/User can access the interview schedules and suggested interview times for the users by inputting both 
 candidate and interviewer id's
 
-##Setup
+## Setup
 
 ### Versions
 ``` python 3.8
