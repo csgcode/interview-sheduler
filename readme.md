@@ -38,10 +38,7 @@ Create a python 3.6 virtualenv
 ```
 
 ### Django Setup
-
-Download sample local.py file to save local settings in dir portal/local.py. Sample given below
-https://github.com/sweenip/AppPortal/blob/f5b79d45b299f77259931daf7b400c28ca14ba2f/portal/local.py
-
+Sample env file is included in the repo.
 Migrate database
 ```python manage.py migrate```
 
@@ -124,3 +121,6 @@ DateFormat sample - 2021-03-01 10:45:00+00:00 (Timezone in required)
 4. AUTO-SCHEDULE - add skills to user profiles auto schedule interviewer and candidates with matching skills and setup a calender API
 5. write unit-tests to check the logic used while calculating overlaps - Break it , Fix it
 6. dockerize
+
+### Docker Setup - TODO
+
