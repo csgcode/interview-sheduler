@@ -109,11 +109,11 @@ DateFormat sample - 2021-03-01 10:45:00+00:00 (Timezone in required)
 
 `available_slots`: shows the suggested slots according to the interview duration(60 mins)
                     Note: slots less than 60 mis are not shown
-`available_times`: shows the time range at which the both the users are free
+`available_times`: shows the time range at which the both the users are free, this can show time ranges more than 60min durations(additional)
 
-###Assumtions and validations
+### Assumptions and validations
 1. All datetime entered are in UTC.
-2. all inputs are necessary and datetime should have timezone strings.
+2. All inputs are necessary and datetime should have timezone strings.
 3. Default interview duration is 1hr, this can be changed.
 
 
